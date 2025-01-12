@@ -81,7 +81,11 @@ pip install -r requirements.txt
 1. Создайте Google Spreadsheet и укажите его ID в `SPREADSHEET_ID`.
 2. Убедитесь, что сервисный аккаунт имеет доступ к таблице.
 
-### 4. Запуск проекта
+</details>
+
+<details>
+<summary><b>4. Запуск проекта</b></summary>
+
 ```bash
 python main.py
 ```
