@@ -29,8 +29,8 @@
 <summary><b>1. Клонирование репозитория</b></summary>
 
 ```bash
-git clone https://github.com/your-repository.git
-cd your-repository
+git clone [https://github.com/your-repository.git](https://github.com/Dimodic/yandex-contest-to-sheets)
+cd yandex-contest-to-sheets
 ```
 
 </details>
@@ -72,10 +72,18 @@ pip install -r requirements.txt
 
 ### 3.2. Yandex.Contest API
 1. Создайте приложение в Яндекс ID.
-2. Укажите права доступа:
+2. Укажите свою почту для уведомлений об изменениях API.
+3. Выберите права доступа для приложения:
    - `contest:submit` для отправки решений.
-   - `contest:manage` для управления контестами.
-3. Получите `client_id` и OAuth-токен.
+   - `contest:manage` для управления контестами и участниками.
+4. Получите `client_id` созданного приложения.
+5. Получите OAuth-токен для авторизации.
+
+## Получение OAuth-токена
+1. Перейдите на страницу создания нового приложения Яндекс ID.
+2. Заполните данные и создайте приложение.
+3. Получите отладочный токен, следуя инструкциям [Справки API Яндекс ID](https://yandex.ru/dev/id/doc/dg/oauth/concepts/about.html).
+4. Для авторизации передавайте заголовок `Authorization` со значением `OAuth <ваш_токен>`.
 
 ### 3.3. Настройка таблицы Google Sheets
 1. Создайте Google Spreadsheet и укажите его ID в `SPREADSHEET_ID`.
