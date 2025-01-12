@@ -4,7 +4,7 @@
 ![Google Sheets API](https://img.shields.io/badge/API-Google%20Sheets-green)
 ![Yandex Contest API](https://img.shields.io/badge/API-Yandex%20Contest-orange)
 
-Этот проект интегрирует данные с Yandex.Contest в Google Sheets, позволяя отслеживать прогресс студентов по выполнению домашних заданий.
+Этот проект позволяет интегрировать результаты контестов из Yandex.Contest в Google Sheets, чтобы автоматизировать процесс отслеживания успеваемости студентов.
 
 ## Содержание
 - [Функциональность](#функциональность)
@@ -77,13 +77,8 @@ pip install -r requirements.txt
    - `contest:submit` для отправки решений.
    - `contest:manage` для управления контестами и участниками.
 4. Получите `client_id` созданного приложения.
-5. Получите OAuth-токен для авторизации.
-
-## Получение OAuth-токена
-1. Перейдите на страницу создания нового приложения Яндекс ID.
-2. Заполните данные и создайте приложение.
-3. Получите отладочный токен, следуя инструкциям [Справки API Яндекс ID](https://yandex.ru/dev/id/doc/dg/oauth/concepts/about.html).
-4. Для авторизации передавайте заголовок `Authorization` со значением `OAuth <ваш_токен>`.
+5. Получите отладочный токен, следуя инструкциям [Получение OAuth-токена](https://yandex.ru/dev/id/doc/ru/access).
+6. Получите токен и укажите его в config.py.
 
 ### 3.3. Настройка таблицы Google Sheets
 1. Создайте Google Spreadsheet и укажите его ID в `SPREADSHEET_ID`.
@@ -112,14 +107,14 @@ python main.py
 
 ## Используемые технологии
 
-| Технология             | Описание                                |
-|------------------------|-----------------------------------------|
-| **Python 3.8+**        | Основной язык программирования.         |
-| **Google Sheets API**  | Работа с таблицами Google.              |
-| **Yandex.Contest API** | Получение данных контестов.             |
-| **dateutil**           | Парсинг времени.                        |
-| **gspread**            | Работа с Google Sheets.                 |
-| **logging**            | Логирование выполнения.                 |
+| Технология             | Описание                                | Ссылки                                                                 |
+|------------------------|-----------------------------------------|------------------------------------------------------------------------|
+| **Python 3.8+**        | Основной язык программирования.         | [Документация Python](https://www.python.org/doc/)                     |
+| **Google Sheets API**  | Работа с таблицами Google.              | [Google Sheets API](https://developers.google.com/sheets/api)          |
+| **Yandex.Contest API** | Получение данных контестов.             | [Документация Yandex.Contest API](https://yandex.ru/dev/contest/)      |
+| **dateutil**           | Парсинг времени.                        | [Python-dateutil](https://dateutil.readthedocs.io/)                    |
+| **gspread**            | Работа с Google Sheets.                 | [gspread на GitHub](https://github.com/burnash/gspread)                |
+| **logging**            | Логирование выполнения.                 | [Документация logging](https://docs.python.org/3/library/logging.html) |
 
 ## Примечания
 
