@@ -30,7 +30,7 @@
 <summary><b>1. Клонирование репозитория</b></summary>
 
 ```bash
-git clone [https://github.com/your-repository.git](https://github.com/Dimodic/yandex-contest-to-sheets)
+git clone https://github.com/Dimodic/yandex-contest-to-sheets
 cd yandex-contest-to-sheets
 ```
 
