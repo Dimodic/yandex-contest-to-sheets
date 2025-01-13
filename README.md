@@ -1,8 +1,8 @@
 # Yandex Contest to Google Sheets Integration
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Google Sheets API](https://img.shields.io/badge/API-Google%20Sheets-green)
-![Yandex Contest API](https://img.shields.io/badge/API-Yandex%20Contest-orange)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![Google Sheets API](https://img.shields.io/badge/API-Google%20Sheets-green)](https://developers.google.com/sheets/api)
+[![Yandex Contest API](https://img.shields.io/badge/API-Yandex%20Contest-orange)](https://api.contest.yandex.net/api/public/swagger-ui.html)
 
 Этот проект позволяет интегрировать результаты контестов из Yandex.Contest в Google Sheets, чтобы автоматизировать процесс отслеживания успеваемости студентов.
 
@@ -12,6 +12,7 @@
   - [Клонирование репозитория](#1-клонирование-репозитория)
   - [Установка зависимостей](#2-установка-зависимостей)
   - [Настройка проекта](#3-настройка-проекта)
+  - [Запуск проекта](#4-запуск-проекта)
 - [Пример структуры Google Sheets](#пример-структуры-google-sheets)
 - [Используемые технологии](#используемые-технологии)
 - [Примечания](#примечания)
@@ -38,12 +39,10 @@ cd yandex-contest-to-sheets
 <details>
 <summary><b>2. Установка зависимостей</b></summary>
 
-Создайте виртуальное окружение и установите необходимые библиотеки:
+Создайте виртуальное окружение и установите необходимые библиотеки с помощью `run.py`:
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate  # Для Windows: venv\Scripts\activate
-pip install -r requirements.txt
+python run.py install
 ```
 
 </details>
@@ -89,8 +88,10 @@ pip install -r requirements.txt
 <details>
 <summary><b>4. Запуск проекта</b></summary>
 
+Для запуска проекта используйте команду:
+
 ```bash
-python main.py
+python run.py run
 ```
 
 </details>
