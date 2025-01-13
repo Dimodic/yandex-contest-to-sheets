@@ -99,7 +99,6 @@ def main():
             alias_col += 1
 
         logging.info(f"{homework_name} успешно обновлено!")
-        alias_col += 3
 
 
 if __name__ == "__main__":
