@@ -8,12 +8,21 @@ from yandex_contest import (
     get_contest_participants,
     get_all_submissions
 )
-from google_sheets import get_gspread_client, get_worksheet
-from utils import build_login2row, index_to_column_letter, parse_homework_headers
+from google_sheets import (
+    get_gspread_client,
+    get_worksheet
+)
+from utils import (
+    build_login2row,
+    index_to_column_letter,
+    parse_homework_headers
+)
 
-logging.basicConfig(level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s - %(message)s',
-                    stream=sys.stdout)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    stream=sys.stdout
+)
 
 def main():
     gc = get_gspread_client()
@@ -46,7 +55,6 @@ def main():
         alias_col = homework_names[homework_name]
 
         for problem in problems:
-
             column_values = [[0] for _ in range(num_rows)]
 
             for participant in participants:
@@ -57,8 +65,14 @@ def main():
                     continue
 
                 participant_successful_submissions = list(
-                    filter(lambda s: s['problemAlias'] == problem['alias'] and s['authorId'] == participant_id,
-                           successful_submissions))
+                    filter(
+                        lambda s: (
+                            s['problemAlias'] == problem['alias']
+                            and s['authorId'] == participant_id
+                        ),
+                        successful_submissions
+                    )
+                )
 
                 row_index = logins[login]
 
@@ -72,19 +86,19 @@ def main():
                     )
                     column_values[row_index - 1][0] = formula
 
-            start_row = 3
+            start_row = HEADER_ROWS_COUNT + 1
             end_row = num_rows + HEADER_ROWS_COUNT
             col_letter = index_to_column_letter(alias_col)
             column_range = f"{col_letter}{start_row}:{col_letter}{end_row}"
-            alias_col += 1
 
             worksheet.update(range_name=column_range,
                              values=column_values,
                              value_input_option='USER_ENTERED')
             logging.info(f"Задача {problem['alias']} успешно обновлена")
 
-        logging.info(f"{homework_name} успешно обновлено!")
+            alias_col += 1
 
+        logging.info(f"{homework_name} успешно обновлено!")
         alias_col += 3
 
 
