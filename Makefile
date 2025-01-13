@@ -4,10 +4,13 @@ ACTIVATE := source $(VENV)/bin/activate
 REQUIREMENTS := requirements.txt
 
 install:
-	$(PYTHON) -m venv $(VENV) && $(ACTIVATE) && pip install --upgrade pip && pip install -r $(REQUIREMENTS)
+	$(PYTHON) -m venv $(VENV) && \
+	$(ACTIVATE) && \
+	pip install --upgrade pip && \
+	pip install -r $(REQUIREMENTS)
 
 run:
-	$(ACTIVATE) && $(PYTHON) src/main.py
+	$(ACTIVATE) && $(PYTHON) main.py
 
 clean:
 	rm -rf $(VENV)
