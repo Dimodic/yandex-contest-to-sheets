@@ -36,3 +36,18 @@ def index_to_column_letter(index):
         result = chr(index % 26 + ord('A')) + result
         index = index // 26 - 1
     return result
+
+
+def find_deadline_cell(all_values, homework_name):
+    """
+    Находит ссылку на ячейку дедлайна для указанного домашнего задания, проходя по первому столбцу.
+    """
+    for row_index, row in enumerate(all_values):
+        if row and row[0].strip().lower() == "дедлайны":
+            deadline_row = row_index + 1
+            for col_index in range(1, len(row)):
+                current_homework = row[col_index].strip()
+                if current_homework == homework_name:
+                    deadline_col_letter = index_to_column_letter(col_index + 1)
+                    deadline_cell = f"{deadline_col_letter}{deadline_row}"
+                    return deadline_cell
