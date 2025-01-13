@@ -15,7 +15,8 @@ from google_sheets import (
 from utils import (
     build_login2row,
     index_to_column_letter,
-    parse_homework_headers
+    parse_homework_headers,
+    find_deadline_cell
 )
 
 logging.basicConfig(
@@ -40,6 +41,7 @@ def main():
 
     for index, contest_id in enumerate(CONTEST_IDS, start=1):
         homework_name = f"ДЗ - {index}"
+        deadline_cell = find_deadline_cell(all_values, homework_name)
         logging.info(f"Обработка {homework_name}, ID контеста: {contest_id}")
 
         problems = sorted(get_contest_problems(contest_id), key=lambda p: p['alias'])
@@ -82,7 +84,7 @@ def main():
 
                     formula = (
                         f"=IF(DATE({dt.year}; {dt.month}; {dt.day}) "
-                        f"+ TIME({dt.hour}; {dt.minute}; {dt.second}) < C{num_rows + HEADER_ROWS_COUNT + 5}; 1; 0)"
+                        f"+ TIME({dt.hour}; {dt.minute}; {dt.second}) < {deadline_cell}; 1; 0)"
                     )
                     column_values[row_index - 1][0] = formula
 
