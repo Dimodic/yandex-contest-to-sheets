@@ -98,24 +98,29 @@ python run.py run
 
 ## Пример структуры Google Sheets
 
-|     |            |             |   ДЗ-1   |        |        |   ДЗ-2   |        |        | ... |
-| --- | ---------- | ----------- | -------- | ------ | ------ | -------- | ------ | ------ | --- |
-|  №  |    Имя     |    Логин    |     A    |    B   |    C   |    A     |    B   |    C   | ... |
-|  1  | Иван Иванов|  ivanov123  |          |        |        |          |        |        | ... |
+
+|             |                        |                        |  ДЗ - 1  |        |        |  ДЗ - 2  |        |        | ... |
+| ----------- | ---------------------- | ---------------------- | -------- | ------ | ------ | -------- | ------ | ------ | --- |
+|      №      |          Имя           |         Логин          |     A    |    B   |    C   |    A     |    B   |    C   | ... |
+|      1      | [Фамилия Имя Отчество] |  [логин_пользователя]  |          |        |        |          |        |        | ... |
+|     ...     |          ...           |          ...           |          |        |        |          |        |        | ... |
+|   Дедлайны  |         ДЗ - 1         |    YYYY-MM-DD HH:MM    |          |        |        |          |        |        | ... |
+|             |         ДЗ - 2         |          ...           |          |        |        |          |        |        | ... |
+
 
 - Логины участников используются для сопоставления с данными из Yandex.Contest.
 - Данные ДЗ обновляются автоматически.
 
 ## Используемые технологии
 
-| Технология             | Описание                                | Ссылки                                                                 |
-|------------------------|-----------------------------------------|------------------------------------------------------------------------|
-| **Python 3.8+**        | Основной язык программирования.         | [Документация Python](https://www.python.org/doc/)                     |
-| **Google Sheets API**  | Работа с таблицами Google.              | [Google Sheets API](https://developers.google.com/sheets/api)          |
-| **Yandex.Contest API** | Получение данных контестов.             | [Документация Yandex.Contest API](https://yandex.ru/dev/contest/)      |
-| **dateutil**           | Парсинг времени.                        | [Python-dateutil](https://dateutil.readthedocs.io/)                    |
-| **gspread**            | Работа с Google Sheets.                 | [gspread на GitHub](https://github.com/burnash/gspread)                |
-| **logging**            | Логирование выполнения.                 | [Документация logging](https://docs.python.org/3/library/logging.html) |
+| Технология             | Описание                                | Ссылки                                                                                       |
+|------------------------|-----------------------------------------|----------------------------------------------------------------------------------------------|
+| **Python 3.8+**        | Основной язык программирования.         | [Документация Python](https://www.python.org/doc/)                                           |
+| **Google Sheets API**  | Работа с таблицами Google.              | [Google Sheets API](https://developers.google.com/sheets/api)                                |
+| **Yandex.Contest API** | Получение данных контестов.             | [Документация Yandex.Contest API](https://api.contest.yandex.net/api/public/swagger-ui.html) |
+| **dateutil**           | Парсинг времени.                        | [Python-dateutil](https://dateutil.readthedocs.io/)                                          |
+| **gspread**            | Работа с Google Sheets.                 | [gspread на GitHub](https://github.com/burnash/gspread)                                      |
+| **logging**            | Логирование выполнения.                 | [Документация logging](https://docs.python.org/3/library/logging.html)                       |
 
 ## Примечания
 
