@@ -50,7 +50,7 @@ python run.py install
 <details>
 <summary><b>3. Настройка проекта</b></summary>
 
-### 3.1. Google Sheets API
+#### 3.1. Google Sheets API
 1. Перейдите в [Google Cloud Console](https://console.cloud.google.com/).
 2. Создайте новый проект или выберите существующий.
 3. Включите **Google Sheets API**:
@@ -69,7 +69,7 @@ python run.py install
    - Нажмите **Share** (Поделиться).
    - Введите email-адрес сервисного аккаунта и предоставьте права редактора.
 
-### 3.2. Yandex.Contest API
+#### 3.2. Yandex.Contest API
 1. Создайте приложение в Яндекс ID.
 2. Укажите свою почту для уведомлений об изменениях API.
 3. Выберите права доступа для приложения:
@@ -79,7 +79,7 @@ python run.py install
 5. Получите отладочный токен, следуя инструкциям [Получение OAuth-токена](https://yandex.ru/dev/id/doc/ru/access).
 6. Получите токен и укажите его в config.py.
 
-### 3.3. Настройка таблицы Google Sheets
+#### 3.3. Настройка таблицы Google Sheets
 1. Создайте Google Spreadsheet и укажите его ID в `SPREADSHEET_ID`.
 2. Убедитесь, что сервисный аккаунт имеет доступ к таблице.
 
