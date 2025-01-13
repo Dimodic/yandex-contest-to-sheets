@@ -39,7 +39,7 @@ def main():
 
         logging.info(f"Задачи: {len(problems)},"
                      f"участники: {len(participants)},"
-                     f"решения: {contest_id}")
+                     f"решения: {len(submissions)}")
 
         successful_submissions = list(filter(lambda s: s['verdict'] == 'OK', submissions))
 
