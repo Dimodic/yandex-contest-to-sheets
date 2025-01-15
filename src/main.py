@@ -55,12 +55,16 @@ def main():
 
         successful_submissions = list(filter(lambda s: s['verdict'] == 'OK', submissions))
 
+        contest_logins = {p["login"]: p for p in participants}
+        common_logins = set(logins.keys()) & set(contest_logins.keys())
+        filtered_participants = [contest_logins[login] for login in common_logins]
+        
         alias_col = homework_names[homework_name]
 
         for problem in problems:
             column_values = [[0] for _ in range(num_rows)]
 
-            for participant in participants:
+            for participant in filtered_participants:
                 login = participant["login"]
                 participant_id = participant["id"]
 
