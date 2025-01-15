@@ -80,7 +80,7 @@ python run.py install
      https://api.contest.yandex.net/api/public/v2#access_token=<token>&token_type=<type>&expires_in=<expiration_time>&cid=<user>
      ```
    - Скопируйте `<token>`.
-6. Запишите токен в .env (пример: YANDEX_OAUTH_TOKEN=...).
+6. Запишите токен в .env.
 
 #### 3.3. Настройка таблицы Google Sheets
 1. Создайте Google Spreadsheet и укажите его ID в `SPREADSHEET_ID`.
