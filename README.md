@@ -51,8 +51,8 @@ python run.py install
    - Перейдите в раздел **[APIs & Services](https://console.cloud.google.com/apis)** → **[Enable APIs and Services](https://console.cloud.google.com/apis/library)**.
    - Найдите **[Google Sheets API](https://console.cloud.google.com/apis/library/sheets.googleapis.com)** и нажмите **Enable**.
 4. Создайте учетные данные для сервисного аккаунта:
-   - Перейдите в раздел **APIs & Services** → **Credentials**.
-   - Нажмите **Create Credentials** → **Service Account**.
+   - Перейдите в раздел **[APIs & Services](https://console.cloud.google.com/apis)** → **[Credentials](https://console.cloud.google.com/apis/credentials)**.
+   - Нажмите **Create Credentials** → **[Service Account](https://console.cloud.google.com/iam-admin/serviceaccounts/create)**.
    - Заполните форму и нажмите **Create**.
 5. Создайте JSON-ключ для сервисного аккаунта:
    - Перейдите в раздел **Keys** учетной записи сервисного аккаунта.
@@ -64,13 +64,19 @@ python run.py install
    - Введите email-адрес сервисного аккаунта и предоставьте права редактора.
 
 #### 3.2. Yandex.Contest API
-1. Создайте приложение в [Яндекс ID](https://oauth.yandex.ru/).
+1. Создайте приложение в [Яндекс ID](https://oauth.yandex.ru/client/new/).
 2. Выберите права доступа для приложения:
    - `contest:submit` для отправки решений.
    - `contest:manage` для управления контестами и участниками.
 3. Получите `client_id` созданного приложения.
-4. Получите отладочный токен, следуя инструкциям [Получение OAuth-токена](https://yandex.ru/dev/id/doc/ru/access).
-5. Запишите токен в .env (пример: YANDEX_OAUTH_TOKEN=...).
+4. Получите [OAuth-токен](https://yandex.ru/dev/id/doc/ru/access).
+   - Перейдите в раздел **[использование отладочного токена](https://yandex.ru/dev/id/doc/ru/tokens/debug-token)**
+   - Сформируйте ссылку вида:
+     https://oauth.yandex.ru/authorize?response_type=token&client_id=<идентификатор приложения>
+   - После перехода вы получите ссылку вида:
+     https://api.contest.yandex.net/api/public/v2#access_token=<token>&token_type=<type>&expires_in=<expiration_time>&cid=<user>
+   - Скопируйте <token>.
+6. Запишите токен в .env (пример: YANDEX_OAUTH_TOKEN=...).
 
 #### 3.3. Настройка таблицы Google Sheets
 1. Создайте Google Spreadsheet и укажите его ID в `SPREADSHEET_ID`.
