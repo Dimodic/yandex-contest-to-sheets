@@ -25,6 +25,7 @@ logging.basicConfig(
     stream=sys.stdout
 )
 
+
 def main():
     gc = get_gspread_client()
     worksheet = get_worksheet(gc, sheet_name="ДЗ")
