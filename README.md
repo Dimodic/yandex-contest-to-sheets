@@ -72,9 +72,13 @@ python run.py install
 4. Получите [OAuth-токен](https://yandex.ru/dev/id/doc/ru/access).
    - Перейдите в раздел **[использование отладочного токена](https://yandex.ru/dev/id/doc/ru/tokens/debug-token)**
    - Сформируйте ссылку вида:
-     https://oauth.yandex.ru/authorize?response_type=token&client_id=<идентификатор приложения>
+     ```
+     https://oauth.yandex.ru/authorize?response_type=token&client_id=<client_id>
+     ```
    - После перехода вы получите ссылку вида:
+     ```
      https://api.contest.yandex.net/api/public/v2#access_token=<token>&token_type=<type>&expires_in=<expiration_time>&cid=<user>
+     ```
    - Скопируйте <token>.
 6. Запишите токен в .env (пример: YANDEX_OAUTH_TOKEN=...).
 
