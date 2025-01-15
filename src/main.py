@@ -2,7 +2,7 @@ import sys
 import logging
 from dateutil import parser
 
-from config import CONTEST_IDS, HEADER_ROWS_COUNT
+from config import CONTEST_IDS, HEADER_ROWS_COUNT, FORMULA_TEMPLATE
 from yandex_contest import (
     get_contest_problems,
     get_contest_participants,
@@ -82,9 +82,14 @@ def main():
                     first_ok_sub = participant_successful_submissions[0]
                     dt = parser.isoparse(first_ok_sub["submissionTime"])
 
-                    formula = (
-                        f"=IF(DATE({dt.year}; {dt.month}; {dt.day}) "
-                        f"+ TIME({dt.hour}; {dt.minute}; {dt.second}) < {deadline_cell}; 1; 0)"
+                    formula = FORMULA_TEMPLATE.format(
+                        year=dt.year,
+                        month=dt.month,
+                        day=dt.day,
+                        hour=dt.hour,
+                        minute=dt.minute,
+                        second=dt.second,
+                        deadline_cell=deadline_cell
                     )
                     column_values[row_index - 1][0] = formula
 
