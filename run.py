@@ -138,7 +138,6 @@ if __name__ == "__main__":
         command = sys.argv[1].lower()
         if command == "install":
             create_venv()
-            setup()
         elif command == "run":
             run_project()
         elif command == "clean":
