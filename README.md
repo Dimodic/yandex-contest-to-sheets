@@ -48,8 +48,8 @@ python run.py install
 1. Перейдите в [Google Cloud Console](https://console.cloud.google.com/).
 2. Создайте новый проект или выберите существующий.
 3. Включите **Google Sheets API**:
-   - Перейдите в раздел **APIs & Services** → **Library**.
-   - Найдите **Google Sheets API** и нажмите **Enable**.
+   - Перейдите в раздел **[APIs & Services](https://console.cloud.google.com/apis)** → **[Enable APIs and Services](https://console.cloud.google.com/apis/library)**.
+   - Найдите **[Google Sheets API](https://console.cloud.google.com/apis/library/sheets.googleapis.com)** и нажмите **Enable**.
 4. Создайте учетные данные для сервисного аккаунта:
    - Перейдите в раздел **APIs & Services** → **Credentials**.
    - Нажмите **Create Credentials** → **Service Account**.
