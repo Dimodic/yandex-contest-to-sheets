@@ -68,9 +68,6 @@ def main():
                 login = participant["login"]
                 participant_id = participant["id"]
 
-                if login not in logins:
-                    continue
-
                 participant_successful_submissions = list(
                     filter(
                         lambda s: (
