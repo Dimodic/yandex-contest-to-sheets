@@ -43,7 +43,7 @@ def find_deadline_cell(all_values, homework_name):
     Находит ссылку на ячейку дедлайна для указанного домашнего задания, проходя по первому столбцу.
     """
     for row_index, row in enumerate(all_values):
-        if row and row[0].strip().lower() == "дедлайны":
+        if row[1] == homework_name:
             deadline_row = row_index + 1
             for col_index in range(1, len(row)):
                 current_homework = row[col_index].strip()
