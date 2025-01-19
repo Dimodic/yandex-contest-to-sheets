@@ -1,5 +1,6 @@
 import sys
 import logging
+from datetime import timedelta
 from dateutil import parser
 
 from config import CONTEST_IDS, HEADER_ROWS_COUNT, FORMULA_TEMPLATE
@@ -83,6 +84,7 @@ def main():
                 if participant_successful_submissions:
                     first_ok_sub = participant_successful_submissions[0]
                     dt = parser.isoparse(first_ok_sub["submissionTime"])
+                    dt += timedelta(hours=3)
 
                     formula = FORMULA_TEMPLATE.format(
                         year=dt.year,
@@ -93,7 +95,7 @@ def main():
                         second=dt.second,
                         deadline_cell=deadline_cell
                     )
-                    column_values[row_index - 1][0] = formula
+                    column_values[row_index - HEADER_ROWS_COUNT][0] = formula
 
             start_row = HEADER_ROWS_COUNT + 1
             end_row = num_rows + HEADER_ROWS_COUNT
