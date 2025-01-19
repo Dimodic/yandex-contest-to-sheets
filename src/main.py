@@ -41,7 +41,7 @@ def main():
     num_rows = len(logins)
     logging.info("Количество строк (участников): %d", num_rows)
 
-    for index, contest_id in enumerate(CONTEST_IDS, start=1):
+    for index, contest_id in CONTEST_IDS.items():
         homework_name = f"ДЗ - {index}"
         deadline_cell = find_deadline_cell(all_values, homework_name)
         logging.info(f"Обработка {homework_name}, ID контеста: {contest_id}")
